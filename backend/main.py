@@ -11,12 +11,13 @@ load_dotenv()
 
 app = FastAPI()
 
-# OpenRouter API configuration
-API_KEY = os.getenv("OPENROUTER_API_KEY")
+# API configuration for fine-tuned model
+API_KEY = os.getenv("OPENAI_API_KEY")
 if not API_KEY:
-    raise ValueError("OPENROUTER_API_KEY not found in environment variables")
+    raise ValueError("OPENAI_API_KEY not found in environment variables")
 
-API_URL = "https://openrouter.ai/api/v1/chat/completions"
+API_URL = "https://api.openai.com/v1/chat/completions"
+MODEL_NAME = "ft:gpt-4o-2024-08-06:personal::B7pktHcM"
 
 # Enable CORS
 app.add_middleware(
@@ -35,7 +36,7 @@ class PasswordResponse(BaseModel):
     suggestion: str
 
 async def check_password_with_ai(password: str) -> tuple[int, str]:
-    """Use OpenRouter to check password strength and get suggestions."""
+    """Use fine-tuned model to check password strength and get suggestions."""
     system_message = """You are an expert password strength checker. Analyze the password and return a JSON object with two fields:
     1. 'score': An integer from 0-2 where:
        - 0 means weak password (lacks complexity, too short, or too simple)
@@ -58,12 +59,11 @@ async def check_password_with_ai(password: str) -> tuple[int, str]:
     
     headers = {
         "Authorization": f"Bearer {API_KEY}",
-        "HTTP-Referer": "http://localhost:8000",
-        "X-Title": "Password Strength Checker"
+        "Content-Type": "application/json"
     }
     
     payload = {
-        "model": "openai/gpt-3.5-turbo",
+        "model": MODEL_NAME,
         "messages": [
             {"role": "system", "content": system_message},
             {"role": "user", "content": f"Password: {password}"}
@@ -80,7 +80,7 @@ async def check_password_with_ai(password: str) -> tuple[int, str]:
                 ai_response = json.loads(data["choices"][0]["message"]["content"])
                 return ai_response["score"], ai_response["stronger_password"]
     except Exception as e:
-        print(f"Error calling OpenRouter API: {e}")
+        print(f"Error calling API: {e}")
         # Fallback response
         return 0, password.capitalize() + "!#"
 
