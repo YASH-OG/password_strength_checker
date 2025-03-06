@@ -3,7 +3,7 @@
 A sophisticated web application powered by a custom fine-tuned GPT-4 model, specifically trained on an extensive dataset of password breaches and security patterns. This application goes beyond traditional password checkers by leveraging advanced AI to provide intelligent, context-aware password strength analysis and suggestions.
 
 ## UI/UX:
-<img width="1468" alt="Screenshot 2025-03-06 at 4 15 19 AM" src="https://github.com/user-attachments/assets/4eedb06c-3034-40c5-b192-8adf348c6302" />
+<img width="1413" alt="Screenshot 2025-03-06 at 11 28 02 PM" src="https://github.com/user-attachments/assets/186da921-8b4c-46bd-a731-5ad870cec882" />
 
 
 
