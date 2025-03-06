@@ -105,6 +105,23 @@ Our model was fine-tuned to achieve optimal performance in password strength pre
 
 The backend will run on http://localhost:8000
 
+## 📝 API Endpoints (Test this before running the frontend)
+
+### POST (method) /check-password
+Checks password strength and provides suggestions.
+
+Example Request body:
+``` json
+yashlal@Yashs-MacBook-Air-4 backend % curl -X POST -H "Content-Type: application/json" -d '{"password":"MyStr0ng@P@ssw0rd2024!"}' http://localhost:8000/check-password
+```
+
+Example Response:
+```json
+{"score":2,"suggestion":"Damn Bro Crazy Password!"}
+
+```
+
+
 ### Frontend Setup
 
 1. Navigate to the frontend directory:
@@ -123,26 +140,6 @@ The backend will run on http://localhost:8000
    ```
 
 The frontend will run on http://localhost:5173
-
-## 📝 API Endpoints
-
-### POST /check-password
-Checks password strength and provides suggestions.
-
-Request body:
-```json
-{
-  "password": "string"
-}
-```
-
-Response:
-```json
-{
-  "score": 0-2,
-  "suggestion": "string"
-}
-```
 
 ## 🔒 Password Scoring Criteria
 
