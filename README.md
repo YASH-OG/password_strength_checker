@@ -3,14 +3,15 @@
 A sophisticated web application powered by a custom fine-tuned GPT-4 model, specifically trained on an extensive dataset of password breaches and security patterns. This application goes beyond traditional password checkers by leveraging advanced AI to provide intelligent, context-aware password strength analysis and suggestions.
 
 ## UI/UX:
+<img width="1402" alt="Screenshot 2025-03-06 at 11 35 34 PM" src="https://github.com/user-attachments/assets/6d732f02-8e89-492a-9d76-71c76d5cf506" />
 <img width="1413" alt="Screenshot 2025-03-06 at 11 28 02 PM" src="https://github.com/user-attachments/assets/186da921-8b4c-46bd-a731-5ad870cec882" />
-
-
+<img width="1413" alt="Screenshot 2025-03-06 at 11 31 39 PM" src="https://github.com/user-attachments/assets/0d2823b8-070b-4d0e-90bd-d11f76ffe81b" />
 
 ## 🎯 Why This Password Checker?
 
 - **AI-Powered Intelligence**: Our fine-tuned model has been trained on:
-  - The COMB (Combination of Many Breaches) dataset containing 3.2+ billion leaked credentials
+  - <a href="https://www.kaggle.com/datasets/bhavikbb/password-strength-classifier-dataset">Password Strength Classifier Dataset</a> (along with suggested stronger passwords)
+  - The <a href="https://www.proxynova.com/tools/comb">COMB</a> (Combination of Many Breaches) dataset containing 3.2+ billion (around 100 for now due to computational limitations) leaked credentials
   - Advanced password security patterns and best practices
   - Real-world breach analysis and vulnerability patterns
   
@@ -50,6 +51,7 @@ Our model was fine-tuned to achieve optimal performance in password strength pre
 
 ### AI/Backend
 - Custom fine-tuned GPT-4 model trained on:
+  - <a href="https://www.kaggle.com/datasets/bhavikbb/password-strength-classifier-dataset">Password Strength Classifier Dataset</a>
   - 3.2B+ leaked credentials from the COMB dataset
   - Advanced password security patterns
   - Common breach vulnerabilities
