@@ -182,3 +182,5 @@ Our fine-tuned model has been extensively tested against:
 - Common attack patterns
 - Industry standard password security tools
 - Real-world security scenarios
+
+## Give this a STAR if you find it interesting !!!
