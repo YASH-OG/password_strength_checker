@@ -63,7 +63,7 @@ Our model was fine-tuned to achieve optimal performance in password strength pre
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.11
 - Node.js 16+
 - OpenAI API key with access to the fine-tuned model
 
