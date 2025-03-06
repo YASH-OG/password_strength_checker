@@ -96,7 +96,7 @@ Our model was fine-tuned to achieve optimal performance in password strength pre
    ```bash
    cp .env.example .env
    ```
-   Then edit `.env` and replace `your-openrouter-api-key-here` with your actual OpenAI API key.
+   Then edit `.env` and replace `your-openai-api-key-here` with your actual OpenAI API key.
 
 5. Start the backend server:
    ```bash
